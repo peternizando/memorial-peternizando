@@ -19,11 +19,9 @@ async function iniciar() {
 
         const codigo = obterCodigoMemorial();
 
-        console.log("Código recebido:", codigo);
-
         const dados = await carregarDados(codigo);
 
-        preencherPagina(dados);
+        preencherPagina(codigo, dados);
 
         console.log("Memorial carregado com sucesso.");
 
@@ -76,10 +74,16 @@ async function carregarDados(codigo) {
 /**
  * Atualiza a página.
  */
-function preencherPagina(dados) {
+function preencherPagina(codigo, dados) {
 
     document.getElementById("nomePet").textContent = dados.nome;
 
     document.getElementById("mensagem").textContent = dados.mensagem;
+
+    document.getElementById("fotoPrincipal").src =
+        `./memoriais/${codigo}/${dados.fotoPrincipal}`;
+
+    document.getElementById("fotoPrincipal").alt =
+        dados.nome;
 
 }
