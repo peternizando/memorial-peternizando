@@ -14,21 +14,17 @@ async function iniciar() {
 
     try {
 
-        console.log("1 - Iniciando aplicação");
-
         const codigo = obterCodigoMemorial();
 
-        console.log("2 - Código recebido:", codigo);
+        console.log("Código recebido:", codigo);
 
         const dados = await carregarDados(codigo);
 
-        console.log("3 - JSON carregado");
+        console.log("JSON carregado com sucesso!");
 
-        console.log(dados);
+        console.table(dados);
 
     } catch (erro) {
-
-        console.error("ERRO ENCONTRADO:");
 
         console.error(erro);
 
@@ -54,24 +50,20 @@ function obterCodigoMemorial() {
 
 async function carregarDados(codigo) {
 
-    const caminho = `memoriais/${codigo}/dados.json`;
+    const caminho = `./memoriais/${codigo}/dados.json`;
 
-    console.log("3 - Caminho:", caminho);
+    console.log("Buscando:", caminho);
 
     const resposta = await fetch(caminho);
 
-    console.log("4 - Status HTTP:", resposta.status);
+    console.log("Status:", resposta.status);
 
     if (!resposta.ok) {
 
-        throw new Error("Memorial não encontrado.");
+        throw new Error("Não foi possível carregar o memorial.");
 
     }
 
-    const dados = await resposta.json();
-
-    console.log("5 - JSON convertido");
-
-    return dados;
+    return await resposta.json();
 
 }
