@@ -2,12 +2,8 @@
 // Memorial Peternizando
 // ==========================================
 
-// Inicia a aplicação
 iniciar();
 
-/**
- * Função principal da aplicação.
- */
 async function iniciar() {
 
     console.clear();
@@ -18,27 +14,28 @@ async function iniciar() {
 
     try {
 
+        console.log("1 - Iniciando aplicação");
+
         const codigo = obterCodigoMemorial();
 
-        console.log("Código recebido:", codigo);
+        console.log("2 - Código recebido:", codigo);
 
         const dados = await carregarDados(codigo);
 
-        console.log("Dados carregados:");
+        console.log("3 - JSON carregado");
 
         console.log(dados);
 
     } catch (erro) {
 
-        console.error("Erro:", erro.message);
+        console.error("ERRO ENCONTRADO:");
+
+        console.error(erro);
 
     }
 
 }
 
-/**
- * Obtém o código do memorial informado na URL.
- */
 function obterCodigoMemorial() {
 
     const parametros = new URLSearchParams(window.location.search);
@@ -55,14 +52,15 @@ function obterCodigoMemorial() {
 
 }
 
-/**
- * Carrega o JSON do memorial.
- */
 async function carregarDados(codigo) {
 
     const caminho = `memoriais/${codigo}/dados.json`;
 
+    console.log("3 - Caminho:", caminho);
+
     const resposta = await fetch(caminho);
+
+    console.log("4 - Status HTTP:", resposta.status);
 
     if (!resposta.ok) {
 
@@ -70,6 +68,10 @@ async function carregarDados(codigo) {
 
     }
 
-    return await resposta.json();
+    const dados = await resposta.json();
+
+    console.log("5 - JSON convertido");
+
+    return dados;
 
 }
