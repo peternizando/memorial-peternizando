@@ -1,89 +1,97 @@
-// ==========================================
-// Memorial Peternizando
-// ==========================================
+console.clear();
 
-iniciar();
+console.log("================================");
+console.log(" Memorial Peternizando");
+console.log("================================");
 
-/**
- * Inicializa a aplicação.
- */
-async function iniciar() {
+/*
+==========================================
+OBTER O CÓDIGO DO MEMORIAL
+==========================================
+*/
 
-    console.clear();
+const parametros = new URLSearchParams(window.location.search);
 
-    console.log("================================");
-    console.log(" Memorial Peternizando");
-    console.log("================================");
+const codigo = parametros.get("id");
+
+if (!codigo) {
+
+    alert("Código do memorial não informado.");
+
+    throw new Error("Código não informado.");
+
+}
+
+console.log("Código recebido:", codigo);
+
+/*
+==========================================
+CAMINHO DO JSON
+==========================================
+*/
+
+const caminhoJson = `memoriais/${codigo}/dados.json`;
+
+/*
+==========================================
+CARREGAR DADOS
+==========================================
+*/
+
+async function carregarMemorial() {
 
     try {
 
-        const codigo = obterCodigoMemorial();
+        const resposta = await fetch(caminhoJson);
 
-        const dados = await carregarDados(codigo);
+        if (!resposta.ok) {
 
-        preencherPagina(codigo, dados);
+            throw new Error("Memorial não encontrado.");
 
-        console.log("Memorial carregado com sucesso.");
+        }
 
-    } catch (erro) {
+        const dados = await resposta.json();
+
+        preencherPagina(dados);
+
+    }
+
+    catch (erro) {
 
         console.error(erro);
 
+        alert("Memorial não encontrado.");
+
     }
 
 }
 
-/**
- * Obtém o código do memorial.
- */
-function obterCodigoMemorial() {
+/*
+==========================================
+PREENCHER A PÁGINA
+==========================================
+*/
 
-    const parametros = new URLSearchParams(window.location.search);
+function preencherPagina(dados) {
 
-    const codigo = parametros.get("id");
-
-    if (!codigo) {
-
-        throw new Error("Nenhum memorial informado.");
-
-    }
-
-    return codigo;
-
-}
-
-/**
- * Carrega o JSON.
- */
-async function carregarDados(codigo) {
-
-    const caminho = `./memoriais/${codigo}/dados.json`;
-
-    const resposta = await fetch(caminho);
-
-    if (!resposta.ok) {
-
-        throw new Error("Memorial não encontrado.");
-
-    }
-
-    return await resposta.json();
-
-}
-
-/**
- * Atualiza a página.
- */
-function preencherPagina(codigo, dados) {
+    document.title = dados.nome + " | Memorial Peternizando";
 
     document.getElementById("nomePet").textContent = dados.nome;
 
     document.getElementById("mensagem").textContent = dados.mensagem;
 
     document.getElementById("fotoPrincipal").src =
-        `./memoriais/${codigo}/${dados.fotoPrincipal}`;
+        `memoriais/${codigo}/imagens/${dados.fotoPrincipal}`;
 
     document.getElementById("fotoPrincipal").alt =
         dados.nome;
 
 }
+
+/*
+==========================================
+INICIAR APLICAÇÃO
+==========================================
+*/
+
+carregarMemorial();
