@@ -4,12 +4,6 @@ console.log("================================");
 console.log(" Memorial Peternizando");
 console.log("================================");
 
-/*
-==========================================
-OBTER O CÓDIGO DO MEMORIAL
-==========================================
-*/
-
 const parametros = new URLSearchParams(window.location.search);
 
 const codigo = parametros.get("id");
@@ -18,25 +12,13 @@ if (!codigo) {
 
     alert("Código do memorial não informado.");
 
-    throw new Error("Código não informado.");
+    throw new Error("Código do memorial não informado.");
 
 }
 
 console.log("Código recebido:", codigo);
 
-/*
-==========================================
-CAMINHO DO JSON
-==========================================
-*/
-
 const caminhoJson = `memoriais/${codigo}/dados.json`;
-
-/*
-==========================================
-CARREGAR DADOS
-==========================================
-*/
 
 async function carregarMemorial() {
 
@@ -66,19 +48,15 @@ async function carregarMemorial() {
 
 }
 
-/*
-==========================================
-PREENCHER A PÁGINA
-==========================================
-*/
-
 function preencherPagina(dados) {
 
-    document.title = dados.nome + " | Memorial Peternizando";
+    document.title = `${dados.nome} | Memorial Peternizando`;
 
-    document.getElementById("nomePet").textContent = dados.nome;
+    document.getElementById("nomePet").textContent =
+        dados.nome;
 
-    document.getElementById("mensagem").textContent = dados.mensagem;
+    document.getElementById("mensagem").textContent =
+        dados.mensagem;
 
     document.getElementById("fotoPrincipal").src =
         `memoriais/${codigo}/imagens/${dados.fotoPrincipal}`;
@@ -86,12 +64,15 @@ function preencherPagina(dados) {
     document.getElementById("fotoPrincipal").alt =
         dados.nome;
 
-}
+    const nomeRecordacoes =
+        document.getElementById("nomeRecordacoes");
 
-/*
-==========================================
-INICIAR APLICAÇÃO
-==========================================
-*/
+    if (nomeRecordacoes) {
+
+        nomeRecordacoes.textContent = dados.nome;
+
+    }
+
+}
 
 carregarMemorial();
