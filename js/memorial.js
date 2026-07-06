@@ -1,1 +1,11 @@
-console.log("Memorial Peternizando iniciado.");
+// ==========================================
+// Memorial Peternizando
+// ==========================================
+
+iniciar();
+
+function iniciar() {
+
+    console.log("Aplicação iniciada.");
+
+}
