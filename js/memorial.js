@@ -16,17 +16,28 @@ async function iniciar() {
     console.log(" Memorial Peternizando");
     console.log("================================");
 
-    const codigo = obterCodigoMemorial();
+    try {
 
-    console.log("Código recebido:", codigo);
+        const codigo = obterCodigoMemorial();
+
+        console.log("Código recebido:", codigo);
+
+        const dados = await carregarDados(codigo);
+
+        console.log("Dados carregados:");
+
+        console.log(dados);
+
+    } catch (erro) {
+
+        console.error("Erro:", erro.message);
+
+    }
 
 }
 
 /**
- * Obtém código do memorial informado na URL.
- *
- * Exemplo:
- * memorial.html?id=MP-TESTE001
+ * Obtém o código do memorial informado na URL.
  */
 function obterCodigoMemorial() {
 
@@ -36,12 +47,29 @@ function obterCodigoMemorial() {
 
     if (!codigo) {
 
-        alert("Nenhum memorial informado.");
-
-        throw new Error("Parâmetro 'id' não encontrado.");
+        throw new Error("Nenhum memorial informado.");
 
     }
 
     return codigo;
+
+}
+
+/**
+ * Carrega o JSON do memorial.
+ */
+async function carregarDados(codigo) {
+
+    const caminho = `memoriais/${codigo}/dados.json`;
+
+    const resposta = await fetch(caminho);
+
+    if (!resposta.ok) {
+
+        throw new Error("Memorial não encontrado.");
+
+    }
+
+    return await resposta.json();
 
 }
