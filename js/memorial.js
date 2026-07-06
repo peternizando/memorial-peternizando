@@ -4,6 +4,9 @@
 
 iniciar();
 
+/**
+ * Inicializa a aplicação.
+ */
 async function iniciar() {
 
     console.clear();
@@ -20,9 +23,9 @@ async function iniciar() {
 
         const dados = await carregarDados(codigo);
 
-        console.log("JSON carregado com sucesso!");
+        preencherPagina(dados);
 
-        console.table(dados);
+        console.log("Memorial carregado com sucesso.");
 
     } catch (erro) {
 
@@ -32,6 +35,9 @@ async function iniciar() {
 
 }
 
+/**
+ * Obtém o código do memorial.
+ */
 function obterCodigoMemorial() {
 
     const parametros = new URLSearchParams(window.location.search);
@@ -48,22 +54,32 @@ function obterCodigoMemorial() {
 
 }
 
+/**
+ * Carrega o JSON.
+ */
 async function carregarDados(codigo) {
 
     const caminho = `./memoriais/${codigo}/dados.json`;
 
-    console.log("Buscando:", caminho);
-
     const resposta = await fetch(caminho);
-
-    console.log("Status:", resposta.status);
 
     if (!resposta.ok) {
 
-        throw new Error("Não foi possível carregar o memorial.");
+        throw new Error("Memorial não encontrado.");
 
     }
 
     return await resposta.json();
+
+}
+
+/**
+ * Atualiza a página.
+ */
+function preencherPagina(dados) {
+
+    document.getElementById("nomePet").textContent = dados.nome;
+
+    document.getElementById("mensagem").textContent = dados.mensagem;
 
 }
