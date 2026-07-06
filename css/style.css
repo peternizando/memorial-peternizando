@@ -1,0 +1,215 @@
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+body {
+
+    background: #f4f4f4;
+
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+
+    color: #444;
+
+    padding: 30px;
+
+}
+
+.container {
+
+    width: 100%;
+
+    max-width: 720px;
+
+    margin: auto;
+
+}
+
+.card {
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    padding: 35px;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,.08);
+
+}
+
+#fotoPrincipal {
+
+    width: 230px;
+
+    height: 230px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    display: block;
+
+    margin: auto;
+
+    margin-bottom: 25px;
+
+    border: 5px solid #f5f5f5;
+
+}
+
+#nomePet {
+
+    text-align: center;
+
+    font-size: 36px;
+
+    color: #222;
+
+    margin-bottom: 20px;
+
+}
+
+#mensagem {
+
+    text-align: center;
+
+    line-height: 1.8;
+
+    font-size: 18px;
+
+    margin-bottom: 35px;
+
+    color: #555;
+
+}
+
+.bloco {
+
+    border-top: 1px solid #ececec;
+
+    padding-top: 25px;
+
+    margin-top: 25px;
+
+}
+
+.bloco h2 {
+
+    margin-bottom: 18px;
+
+    font-size: 24px;
+
+    color: #333;
+
+}
+
+.placeholder {
+
+    text-align: center;
+
+    color: #999;
+
+    padding: 25px;
+
+    background: #fafafa;
+
+    border-radius: 12px;
+
+}
+
+button {
+
+    width: 100%;
+
+    margin-top: 35px;
+
+    padding: 18px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #111;
+
+    color: #fff;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+}
+
+button:hover {
+
+    background: #333;
+
+}
+
+footer {
+
+    margin-top: 40px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #ececec;
+
+    text-align: center;
+
+}
+
+footer h3 {
+
+    font-size: 24px;
+
+    margin-bottom: 10px;
+
+}
+
+footer p {
+
+    color: #777;
+
+}
+
+@media (max-width: 600px) {
+
+    body {
+
+        padding: 15px;
+
+    }
+
+    .card {
+
+        padding: 20px;
+
+    }
+
+    #fotoPrincipal {
+
+        width: 180px;
+
+        height: 180px;
+
+    }
+
+    #nomePet {
+
+        font-size: 30px;
+
+    }
+
+    #mensagem {
+
+        font-size: 16px;
+
+    }
+
+}

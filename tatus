@@ -1,0 +1,84 @@
+[1mdiff --git a/memorial.html b/memorial.html[m
+[1mindex 416b84f..dfc2398 100644[m
+[1m--- a/memorial.html[m
+[1m+++ b/memorial.html[m
+[36m@@ -1,4 +1,5 @@[m
+ <!DOCTYPE html>[m
+[32m+[m
+ <html lang="pt-BR">[m
+ [m
+ <head>[m
+[36m@@ -19,7 +20,7 @@[m
+ [m
+     <main class="container">[m
+ [m
+[31m-        <section class="memorial">[m
+[32m+[m[32m        <section class="card">[m
+ [m
+             <img[m
+                 id="fotoPrincipal"[m
+[36m@@ -30,19 +31,61 @@[m
+ [m
+             <p id="mensagem"></p>[m
+ [m
+[31m-            <section id="galeria">[m
+[32m+[m[32m            <section class="bloco">[m
+[32m+[m
+[32m+[m[32m                <h2>❤️ Recordações</h2>[m
+[32m+[m
+[32m+[m[32m                <div id="galeria">[m
+[32m+[m
+[32m+[m[32m                    <p class="placeholder">[m
+[32m+[m
+[32m+[m[32m                        Em breve...[m
+[32m+[m
+[32m+[m[32m                    </p>[m
+[32m+[m
+[32m+[m[32m                </div>[m
+ [m
+             </section>[m
+ [m
+[31m-            <section id="video">[m
+[32m+[m[32m            <section class="bloco">[m
+[32m+[m
+[32m+[m[32m                <h2>🎥 Uma lembrança especial</h2>[m
+[32m+[m
+[32m+[m[32m                <div id="video">[m
+[32m+[m
+[32m+[m[32m                    <p class="placeholder">[m
+[32m+[m
+[32m+[m[32m                        Em breve...[m
+[32m+[m
+[32m+[m[32m                    </p>[m
+[32m+[m
+[32m+[m[32m                </div>[m
+ [m
+             </section>[m
+ [m
+[32m+[m[32m            <button id="btnCompartilhar">[m
+[32m+[m
+[32m+[m[32m                ❤ Compartilhar esta homenagem[m
+[32m+[m
+[32m+[m[32m            </button>[m
+[32m+[m
+[32m+[m[32m            <footer>[m
+[32m+[m
+[32m+[m[32m                <h3>Peternizando</h3>[m
+[32m+[m
+[32m+[m[32m                <p>[m
+[32m+[m
+[32m+[m[32m                    Transformando saudade em presença.[m
+[32m+[m
+[32m+[m[32m                </p>[m
+[32m+[m
+[32m+[m[32m            </footer>[m
+[32m+[m
+         </section>[m
+ [m
+     </main>[m
+ [m
+[31m-    <script src="js/memorial.js"></script>[m
+[32m+[m[32m    <script src="js/memorial.js?v=1.0.0"></script>[m
+ [m
+ </body>[m
+ [m
