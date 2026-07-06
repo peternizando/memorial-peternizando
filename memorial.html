@@ -3,6 +3,10 @@
 
 <head>
 
+    <link rel="icon"
+      type="image/png"
+      href="assets/favicon.png">
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
@@ -11,7 +15,7 @@
     <title>Memorial Peternizando</title>
 
     <link rel="stylesheet"
-          href="css/style.css?v=1.0.0">
+          href="css/style.css?v=1.1.0">
 
 </head>
 
@@ -19,70 +23,88 @@
 
     <main class="container">
 
-        <section class="card">
+        <article class="card">
 
-            <img
-                id="fotoPrincipal"
-                src=""
-                alt="Foto do pet">
+            <!-- CABEÇALHO -->
 
-            <h1 id="nomePet"></h1>
+            <header class="cabecalho">
 
-            <p id="mensagem"></p>
+                <img
+                    id="fotoPrincipal"
+                    src=""
+                    alt="Foto do pet">
+
+                <h1 id="nomePet"></h1>
+
+                <p id="mensagem"></p>
+
+            </header>
+
+            <!-- RECORDAÇÕES -->
 
             <section class="bloco">
 
-                <h2>❤️ Recordações</h2>
+                <h2>
 
-                <p class="placeholder">
+                    ❤️ Recordações
+
+                </h2>
+
+                <p class="descricao">
 
                     Reviva alguns momentos especiais compartilhados com
                     <strong id="nomeRecordacoes"></strong>.
 
                 </p>
 
-                <div
-                    id="galeria"
-                    class="galeria-preview">
-
-                    <div class="foto-preview"></div>
-
-                    <div class="foto-preview"></div>
-
-                    <div class="foto-preview"></div>
-
-                    <div class="foto-preview"></div>
+                <div id="galeria"
+                     class="galeria">
 
                 </div>
 
             </section>
+
+            <!-- VÍDEO -->
 
             <section class="bloco">
 
-                <h2>🎥 Uma lembrança especial</h2>
+                <h2>
 
-                <p class="placeholder">
+                    🎥 Uma lembrança especial
 
-                    Assista a um momento inesquecível
-                    que ficará guardado para sempre.
+                </h2>
+
+                <p class="descricao">
+
+                    Um momento inesquecível que permanecerá vivo para sempre.
 
                 </p>
 
-                <div
-                    id="video"
-                    class="video-preview">
+                <div id="video">
 
-                    ▶
+                    <div class="video-placeholder">
+
+                        Vídeo disponível em breve
+
+                    </div>
 
                 </div>
 
             </section>
 
-            <button id="btnCompartilhar">
+            <!-- COMPARTILHAR -->
 
-                ❤️ Compartilhar esta homenagem
+            <section class="bloco">
 
-            </button>
+                <button id="btnCompartilhar">
+
+                    ❤️ Compartilhar esta homenagem
+
+                </button>
+
+            </section>
+
+            <!-- RODAPÉ -->
 
             <footer>
 
@@ -100,11 +122,13 @@
 
             </footer>
 
-        </section>
+        </article>
 
     </main>
 
-    <script src="js/memorial.js?v=1.0.0"></script>
+    <script src="js/memorial.js?v=1.1.0"></script>
+
+    <script src="js/galeria.js?v=1.1.0"></script>
 
 </body>
 

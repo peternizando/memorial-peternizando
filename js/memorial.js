@@ -1,62 +1,111 @@
+/*
+====================================================
+
+Arquivo.....: memorial.js
+
+Projeto.....: Memorial Peternizando
+
+Release.....: 1.1.0
+
+Descrição...:
+Núcleo principal da aplicação.
+
+====================================================
+*/
+
 console.clear();
 
-console.log("================================");
+console.log("========================================");
 console.log(" Memorial Peternizando");
-console.log("================================");
+console.log(" Release 1.1.0");
+console.log("========================================");
 
-const parametros = new URLSearchParams(window.location.search);
+/*
+====================================================
+VARIÁVEIS GLOBAIS
+====================================================
+*/
 
-const codigo = parametros.get("id");
+let codigo = "";
 
-if (!codigo) {
+let dadosMemorial = null;
 
-    alert("Código do memorial não informado.");
+/*
+====================================================
+INICIAR APLICAÇÃO
+====================================================
+*/
 
-    throw new Error("Código do memorial não informado.");
+async function iniciarAplicacao() {
 
-}
+    codigo = obterCodigoMemorial();
 
-console.log("Código recebido:", codigo);
+    dadosMemorial = await carregarDadosMemorial(codigo);
 
-const caminhoJson = `memoriais/${codigo}/dados.json`;
+    preencherCabecalho(dadosMemorial);
 
-async function carregarMemorial() {
-
-    try {
-
-        const resposta = await fetch(caminhoJson);
-
-        if (!resposta.ok) {
-
-            throw new Error("Memorial não encontrado.");
-
-        }
-
-        const dados = await resposta.json();
-
-        preencherPagina(dados);
-
-    }
-
-    catch (erro) {
-
-        console.error(erro);
-
-        alert("Memorial não encontrado.");
-
-    }
+    carregarGaleria(dadosMemorial);
 
 }
 
-function preencherPagina(dados) {
+/*
+====================================================
+OBTER CÓDIGO
+====================================================
+*/
 
-    document.title = `${dados.nome} | Memorial Peternizando`;
+function obterCodigoMemorial() {
 
-    document.getElementById("nomePet").textContent =
-        dados.nome;
+    const parametros = new URLSearchParams(window.location.search);
 
-    document.getElementById("mensagem").textContent =
-        dados.mensagem;
+    const codigoRecebido = parametros.get("id");
+
+    if (!codigoRecebido) {
+
+        alert("Código do memorial não informado.");
+
+        throw new Error("Código não informado.");
+
+    }
+
+    console.log("Código:", codigoRecebido);
+
+    return codigoRecebido;
+
+}
+
+/*
+====================================================
+CARREGAR JSON
+====================================================
+*/
+
+async function carregarDadosMemorial(codigo) {
+
+    const caminho = `memoriais/${codigo}/dados.json`;
+
+    const resposta = await fetch(caminho);
+
+    if (!resposta.ok) {
+
+        throw new Error("Memorial não encontrado.");
+
+    }
+
+    return await resposta.json();
+
+}
+
+/*
+====================================================
+CABEÇALHO
+====================================================
+*/
+
+function preencherCabecalho(dados) {
+
+    document.title =
+        `${dados.nome} | Memorial Peternizando`;
 
     document.getElementById("fotoPrincipal").src =
         `memoriais/${codigo}/imagens/${dados.fotoPrincipal}`;
@@ -64,15 +113,28 @@ function preencherPagina(dados) {
     document.getElementById("fotoPrincipal").alt =
         dados.nome;
 
+    document.getElementById("nomePet").textContent =
+        dados.nome;
+
+    document.getElementById("mensagem").textContent =
+        dados.mensagem;
+
     const nomeRecordacoes =
         document.getElementById("nomeRecordacoes");
 
     if (nomeRecordacoes) {
 
-        nomeRecordacoes.textContent = dados.nome;
+        nomeRecordacoes.textContent =
+            dados.nome;
 
     }
 
 }
 
-carregarMemorial();
+/*
+====================================================
+START
+====================================================
+*/
+
+iniciarAplicacao();
