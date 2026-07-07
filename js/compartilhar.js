@@ -63,9 +63,7 @@ async function compartilharMemorial() {
             });
 
             console.log(
-
                 "Compartilhamento realizado."
-
             );
 
         }
@@ -73,9 +71,7 @@ async function compartilharMemorial() {
         catch (erro) {
 
             console.log(
-
                 "Compartilhamento cancelado."
-
             );
 
         }
@@ -90,7 +86,7 @@ async function compartilharMemorial() {
     ================================================
     */
 
-    copiarLink(url);
+    await copiarLink(url);
 
 }
 
@@ -100,4 +96,112 @@ COPIAR LINK
 ====================================================
 */
 
-async
+async function copiarLink(url) {
+
+    /*
+    ================================================
+    CLIPBOARD API
+    ================================================
+    */
+
+    if (navigator.clipboard) {
+
+        try {
+
+            await navigator.clipboard.writeText(url);
+
+            console.log(
+                "Link copiado para a área de transferência."
+            );
+
+            alert(
+                "✅ Link copiado para a área de transferência."
+            );
+
+            return;
+
+        }
+
+        catch (erro) {
+
+            console.error(
+                "Erro ao copiar utilizando Clipboard API.",
+                erro
+            );
+
+        }
+
+    }
+
+    /*
+    ================================================
+    FALLBACK PARA NAVEGADORES ANTIGOS
+    ================================================
+    */
+
+    try {
+
+        const campo =
+            document.createElement("textarea");
+
+        campo.value =
+            url;
+
+        campo.style.position =
+            "fixed";
+
+        campo.style.opacity =
+            "0";
+
+        document.body.appendChild(campo);
+
+        campo.focus();
+
+        campo.select();
+
+        document.execCommand("copy");
+
+        document.body.removeChild(campo);
+
+        console.log(
+            "Link copiado utilizando método alternativo."
+        );
+
+        alert(
+            "✅ Link copiado para a área de transferência."
+        );
+
+    }
+
+    catch (erro) {
+
+        console.error(
+            "Não foi possível copiar o link.",
+            erro
+        );
+
+        alert(
+            "Não foi possível compartilhar este memorial."
+        );
+
+    }
+
+}
+
+/*
+====================================================
+EVENTOS
+====================================================
+*/
+
+if (btnCompartilhar) {
+
+    btnCompartilhar.addEventListener(
+
+        "click",
+
+        compartilharMemorial
+
+    );
+
+}
