@@ -1,29 +1,76 @@
 /* ==========================================================
    Memorial Peternizando
-   RELEASE 1.1.0
+   RELEASE 1.1.1
    style.css
    ========================================================== */
 
+/* ==========================================================
+   RESET
+   ========================================================== */
+
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
+
+/* ==========================================================
+   DESIGN SYSTEM - PETERNIZANDO
+   ========================================================== */
 
 :root {
 
-    --cor-fundo: #f6f6f6;
-    --cor-card: #ffffff;
-    --cor-borda: #e8e8e8;
+    /* IDENTIDADE VISUAL */
+
+    --petz-preto: #111111;
+
+    --petz-branco: #FFFFFF;
+
+    --petz-rosa: #E8A5C5;
+
+    --petz-cinza: #666666;
+
+    --petz-dourado: #D4AF37;
+
+    /* CORES DA INTERFACE */
+
+    --cor-fundo: #F6F6F6;
+
+    --cor-card: var(--petz-branco);
+
+    --cor-borda: #E8E8E8;
+
     --cor-texto: #333333;
-    --cor-texto-secundario: #666666;
+
+    --cor-texto-secundario: var(--petz-cinza);
+
+    /* EFEITOS */
 
     --sombra-card: 0 12px 30px rgba(0,0,0,.08);
 
+    --sombra-foto: 0 8px 20px rgba(0,0,0,.08);
+
+    --sombra-galeria: 0 6px 18px rgba(0,0,0,.08);
+
+    --sombra-galeria-hover: 0 12px 28px rgba(0,0,0,.18);
+
+    /* BORDAS */
+
     --raio-card: 24px;
+
     --raio-imagem: 18px;
 
+    --raio-botao: 14px;
+
 }
+
+/* ==========================================================
+   BODY
+   ========================================================== */
 
 body {
 
@@ -37,6 +84,10 @@ body {
 
 }
 
+/* ==========================================================
+   CONTAINER
+   ========================================================== */
+
 .container {
 
     width: 100%;
@@ -46,6 +97,10 @@ body {
     margin: 0 auto;
 
 }
+
+/* ==========================================================
+   CARD
+   ========================================================== */
 
 .card {
 
@@ -58,6 +113,10 @@ body {
     box-shadow: var(--sombra-card);
 
 }
+
+/* ==========================================================
+   CABEÇALHO
+   ========================================================== */
 
 .cabecalho {
 
@@ -79,9 +138,9 @@ body {
 
     margin: auto;
 
-    border: 6px solid #f3f3f3;
+    border: 6px solid #F3F3F3;
 
-    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+    box-shadow: var(--sombra-foto);
 
 }
 
@@ -110,6 +169,10 @@ body {
     color: var(--cor-texto-secundario);
 
 }
+
+/* ==========================================================
+   BLOCOS
+   ========================================================== */
 
 .bloco {
 
@@ -165,9 +228,11 @@ body {
 
     cursor: pointer;
 
-    transition: transform .25s, box-shadow .25s;
+    transition:
+        transform .25s,
+        box-shadow .25s;
 
-    box-shadow: 0 6px 18px rgba(0,0,0,.08);
+    box-shadow: var(--sombra-galeria);
 
 }
 
@@ -175,12 +240,12 @@ body {
 
     transform: scale(1.03);
 
-    box-shadow: 0 12px 28px rgba(0,0,0,.18);
+    box-shadow: var(--sombra-galeria-hover);
 
 }
 
 /* ==========================================================
-   PLACEHOLDER DO VÍDEO
+   VÍDEO
    ========================================================== */
 
 .video-placeholder {
@@ -193,13 +258,21 @@ body {
 
     justify-content: center;
 
-    background: linear-gradient(135deg,#efefef,#dddddd);
+    background: linear-gradient(135deg,#EFEFEF,#DDDDDD);
 
     border-radius: var(--raio-imagem);
 
-    color: #777;
+    color: #777777;
 
     font-size: 18px;
+
+}
+
+.video-placeholder img {
+
+    width: 90px;
+
+    opacity: .65;
 
 }
 
@@ -215,19 +288,19 @@ body {
 
     border: none;
 
-    border-radius: 14px;
+    border-radius: var(--raio-botao);
 
-    background: #111111;
+    background: var(--petz-preto);
 
-    color: white;
+    color: var(--petz-branco);
 
     font-size: 17px;
 
     cursor: pointer;
 
     transition:
-    background-color .25s,
-    transform .15s;
+        background-color .25s,
+        transform .15s;
 
 }
 
@@ -281,7 +354,6 @@ body {
 
 }
 
-
 /* ==========================================================
    RODAPÉ
    ========================================================== */
@@ -298,14 +370,6 @@ footer {
 
 }
 
-footer h3 {
-
-    font-size: 24px;
-
-    margin-bottom: 8px;
-
-}
-
 footer p {
 
     color: var(--cor-texto-secundario);
@@ -316,37 +380,43 @@ footer p {
    RESPONSIVO
    ========================================================== */
 
-@media (max-width:700px){
+@media (max-width:700px) {
 
-    body{
+    body {
 
-        padding:12px;
-
-    }
-
-    .card{
-
-        padding:22px;
+        padding: 12px;
 
     }
 
-    #fotoPrincipal{
+    .card {
 
-        width:180px;
-
-        height:180px;
+        padding: 22px;
 
     }
 
-    #nomePet{
+    #fotoPrincipal {
 
-        font-size:30px;
+        width: 180px;
+
+        height: 180px;
 
     }
 
-    .bloco h2{
+    #nomePet {
 
-        font-size:22px;
+        font-size: 30px;
+
+    }
+
+    .bloco h2 {
+
+        font-size: 22px;
+
+    }
+
+    .galeria {
+
+        grid-template-columns: 1fr;
 
     }
 

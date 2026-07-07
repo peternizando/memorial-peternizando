@@ -5,10 +5,17 @@ Arquivo.....: memorial.js
 
 Projeto.....: Memorial Peternizando
 
-Release.....: 1.1.0
+Release.....: 1.1.1
 
 Descrição...:
 Núcleo principal da aplicação.
+
+Responsabilidades:
+
+- Ler o código da URL
+- Carregar o JSON
+- Preencher o cabeçalho
+- Inicializar os módulos da aplicação
 
 ====================================================
 */
@@ -17,7 +24,7 @@ console.clear();
 
 console.log("========================================");
 console.log(" Memorial Peternizando");
-console.log(" Release 1.1.0");
+console.log(" Release 1.1.1");
 console.log("========================================");
 
 /*
@@ -38,19 +45,32 @@ INICIAR APLICAÇÃO
 
 async function iniciarAplicacao() {
 
-    codigo = obterCodigoMemorial();
+    try {
 
-    dadosMemorial = await carregarDadosMemorial(codigo);
+        codigo = obterCodigoMemorial();
 
-    preencherCabecalho(dadosMemorial);
+        dadosMemorial = await carregarDadosMemorial(codigo);
 
-    carregarGaleria(dadosMemorial);
+        preencherCabecalho(dadosMemorial);
+
+        carregarGaleria(dadosMemorial);
+
+        console.log("Memorial carregado com sucesso.");
+
+    }
+    catch (erro) {
+
+        console.error(erro);
+
+        exibirTelaErro();
+
+    }
 
 }
 
 /*
 ====================================================
-OBTER CÓDIGO
+OBTER CÓDIGO DA URL
 ====================================================
 */
 
@@ -62,13 +82,11 @@ function obterCodigoMemorial() {
 
     if (!codigoRecebido) {
 
-        alert("Código do memorial não informado.");
-
-        throw new Error("Código não informado.");
+        throw new Error("Código do memorial não informado.");
 
     }
 
-    console.log("Código:", codigoRecebido);
+    console.log("Código recebido:", codigoRecebido);
 
     return codigoRecebido;
 
@@ -98,7 +116,7 @@ async function carregarDadosMemorial(codigo) {
 
 /*
 ====================================================
-CABEÇALHO
+PREENCHER CABEÇALHO
 ====================================================
 */
 
@@ -133,8 +151,45 @@ function preencherCabecalho(dados) {
 
 /*
 ====================================================
+TELA DE ERRO
+====================================================
+*/
+
+function exibirTelaErro() {
+
+    document.body.innerHTML = `
+
+        <main class="container">
+
+            <article class="card">
+
+                <h1>
+
+                    Memorial não encontrado
+
+                </h1>
+
+                <br>
+
+                <p>
+
+                    O memorial solicitado não existe
+                    ou está temporariamente indisponível.
+
+                </p>
+
+            </article>
+
+        </main>
+
+    `;
+
+}
+
+/*
+====================================================
 START
 ====================================================
 */
 
-iniciarAplicacao();
+document.addEventListener("DOMContentLoaded", iniciarAplicacao);
