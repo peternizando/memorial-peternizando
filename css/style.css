@@ -1,7 +1,10 @@
 /* ==========================================================
    Memorial Peternizando
-   RELEASE 1.1.1
+   RELEASE 1.2.1
    style.css
+
+   Última revisão:
+   07/07/2026
    ========================================================== */
 
 /* ==========================================================
@@ -417,6 +420,128 @@ footer p {
     .galeria {
 
         grid-template-columns: 1fr;
+
+    }
+
+} 
+
+/* ==========================================================
+   LIGHTBOX
+   ========================================================== */
+
+.lightbox {
+
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: rgba(0,0,0,.88);
+
+    z-index: 9999;
+
+    padding: 30px;
+
+    overflow: auto;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+        opacity .25s ease,
+        visibility .25s ease;
+
+}
+
+.lightbox.aberto {
+
+    display: flex;
+
+    opacity: 1;
+
+    visibility: visible;
+
+    animation: fadeIn .25s ease;
+
+}
+
+.lightbox-conteudo {
+
+    position: relative;
+
+}
+
+#imagemLightbox {
+
+    max-width: 95vw;
+
+    max-height: 90vh;
+
+    border-radius: 18px;
+
+    box-shadow: 0 15px 45px rgba(0,0,0,.45);
+
+    cursor: zoom-out;
+
+}
+
+#fecharLightbox {
+
+    position: absolute;
+
+    top: 20px;
+
+    right: 28px;
+
+    font-size: 42px;
+
+    color: #FFFFFF;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    transition: transform .20s;
+
+}
+
+#fecharLightbox:hover {
+
+    transform: scale(1.15);
+
+}
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+    }
+
+}
+
+@media (max-width:700px) {
+
+    #fecharLightbox {
+
+        top: 14px;
+
+        right: 18px;
+
+        font-size: 34px;
 
     }
 

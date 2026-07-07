@@ -1,17 +1,22 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
 
     <meta charset="UTF-8">
 
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="icon"
+          type="image/png"
+          href="assets/icones/favicon.png">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Memorial Peternizando</title>
 
-    <link rel="stylesheet" href="css/style.css?v=1.1.0">
+    <link rel="stylesheet"
+          href="css/style.css?v=1.2.0">
 
 </head>
 
@@ -21,11 +26,16 @@
 
         <article class="card">
 
-            <!-- CABEÇALHO -->
+            <!-- ======================================================
+                 CABEÇALHO
+                 ====================================================== -->
 
             <header class="cabecalho">
 
-                <img id="fotoPrincipal" src="" alt="Foto do pet">
+                <img
+                    id="fotoPrincipal"
+                    src=""
+                    alt="Foto do pet">
 
                 <h1 id="nomePet"></h1>
 
@@ -33,7 +43,9 @@
 
             </header>
 
-            <!-- RECORDAÇÕES -->
+            <!-- ======================================================
+                 RECORDAÇÕES
+                 ====================================================== -->
 
             <section class="bloco">
 
@@ -46,17 +58,22 @@
                 <p class="descricao">
 
                     Reviva alguns momentos especiais compartilhados com
+
                     <strong id="nomeRecordacoes"></strong>.
 
                 </p>
 
-                <div id="galeria" class="galeria">
+                <div
+                    id="galeria"
+                    class="galeria">
 
                 </div>
 
             </section>
 
-            <!-- VÍDEO -->
+            <!-- ======================================================
+                 VÍDEO
+                 ====================================================== -->
 
             <section class="bloco">
 
@@ -76,7 +93,9 @@
 
                     <div class="video-placeholder">
 
-                        Vídeo disponível em breve
+                        <img
+                            src="assets/placeholders/placeholder-video.svg"
+                            alt="Vídeo">
 
                     </div>
 
@@ -84,11 +103,15 @@
 
             </section>
 
-            <!-- COMPARTILHAR -->
+            <!-- ======================================================
+                 COMPARTILHAR
+                 ====================================================== -->
 
             <section class="bloco">
 
-                <button id="btnCompartilhar">
+                <button
+                    id="btnCompartilhar"
+                    type="button">
 
                     ❤️ Compartilhar esta homenagem
 
@@ -96,14 +119,18 @@
 
             </section>
 
-            <!-- RODAPÉ -->
-
+            <!-- ======================================================
+                 RODAPÉ
+                 ====================================================== -->
 
             <footer>
 
                 <div class="footer-logo">
 
-                    <img id="logoPeternizando" src="assets/logos/logo-peternizando.png" alt="Logo da Peternizando">
+                    <img
+                        id="logoPeternizando"
+                        src="assets/logos/logo-peternizando.png"
+                        alt="Logo da Peternizando">
 
                     <h3>
 
@@ -125,9 +152,37 @@
 
     </main>
 
-    <script src="js/memorial.js?v=1.1.0"></script>
+    <!-- ======================================================
+         LIGHTBOX
+         ====================================================== -->
 
-    <script src="js/galeria.js?v=1.1.0"></script>
+    <div
+        id="lightbox"
+        class="lightbox">
+
+        <span
+            id="fecharLightbox">
+
+            ✕
+
+        </span>
+
+        <img
+            id="imagemLightbox"
+            src=""
+            alt="Foto ampliada">
+
+    </div>
+
+    <!-- ======================================================
+         JAVASCRIPT
+         ====================================================== -->
+
+    <script src="js/memorial.js?v=1.2.0"></script>
+
+    <script src="js/galeria.js?v=1.2.0"></script>
+
+    <script src="js/lightbox.js?v=1.2.0"></script>
 
 </body>
 
