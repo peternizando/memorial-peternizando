@@ -4,6 +4,7 @@
 
 O Memorial Peternizando Lite (V1) é a primeira versão oficial da plataforma de memoriais digitais da Peternizando.
 
+
 Seu objetivo é proporcionar uma experiência simples, elegante e emocionante através de um memorial digital acessado por NFC ou QR Code.
 
 ---
