@@ -115,7 +115,7 @@ async function copiarLink(url) {
             );
 
             alert(
-                "✅ Link copiado para a área de transferência."
+                "✅ Link copiado com sucesso."
             );
 
             return;
