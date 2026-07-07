@@ -5,17 +5,13 @@
 
     <meta charset="UTF-8">
 
-    <link rel="icon"
-          type="image/png"
-          href="assets/favicon.png">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Memorial Peternizando</title>
 
-    <link rel="stylesheet"
-          href="css/style.css?v=1.2.1">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -31,10 +27,7 @@
 
             <header class="cabecalho">
 
-                <img
-                    id="fotoPrincipal"
-                    src=""
-                    alt="Foto do pet">
+                <img id="fotoPrincipal" src="" alt="Foto do pet">
 
                 <h1 id="nomePet"></h1>
 
@@ -61,8 +54,7 @@
 
                 </p>
 
-                <div id="galeria"
-                     class="galeria">
+                <div id="galeria" class="galeria">
 
                 </div>
 
@@ -90,9 +82,7 @@
 
                     <div class="video-placeholder">
 
-                        <img
-                            src="assets/placeholders/placeholder-video.svg"
-                            alt="Vídeo">
+                        <img src="assets/placeholders/placeholder-video.svg" alt="Vídeo">
 
                         <p>
 
@@ -128,10 +118,7 @@
 
                 <div class="footer-logo">
 
-                    <img
-                        src="assets/logos/logo-peternizando.png"
-                        alt="Peternizando"
-                        loading="lazy">
+                    <img src="assets/logos/logo-peternizando.png" alt="Peternizando" loading="lazy">
 
                     <h3>
 
@@ -157,35 +144,56 @@
          LIGHTBOX
          ====================================================== -->
 
-    <div
-        id="lightbox"
-        class="lightbox">
+    <div id="lightbox" class="lightbox" tabindex="0">
 
         <div class="lightbox-conteudo">
 
-            <span
-                id="fecharLightbox">
+            <!-- Fechar -->
+
+            <button id="fecharLightbox" class="lightbox-botao" aria-label="Fechar">
 
                 ✕
 
-            </span>
+            </button>
 
-            <img
-                id="imagemLightbox"
-                src=""
-                alt="Foto ampliada">
+            <!-- Foto anterior -->
+
+            <button id="fotoAnterior" class="lightbox-navegacao lightbox-anterior" aria-label="Foto anterior">
+
+                ❮
+
+            </button>
+
+            <!-- Imagem -->
+
+            <img id="imagemLightbox" src="" alt="Foto ampliada">
+
+            <!-- Próxima foto -->
+
+            <button id="fotoProxima" class="lightbox-navegacao lightbox-proxima" aria-label="Próxima foto">
+
+                ❯
+
+            </button>
+
+            <!-- Contador -->
+
+            <div id="contadorLightbox" class="lightbox-contador">
+
+                1 de 1
+
+            </div>
 
         </div>
-
     </div>
 
-<script src="js/memorial.js?v=1.3.0"></script>
+    <script src="js/memorial.js"></script>
 
-<script src="js/galeria.js?v=1.3.0"></script>
+    <script src="js/galeria.js?v=1.4.0"></script>
 
-<script src="js/lightbox.js?v=1.3.0"></script>
+    <script src="js/lightbox.js?v=1.4.0"></script>
 
-<script src="js/midia.js?v=1.3.0"></script>
+    <script src="js/midia.js?v=1.4.0"></script>
 
 </body>
 

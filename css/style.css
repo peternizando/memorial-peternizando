@@ -465,6 +465,204 @@ footer p {
 
 }
 
+/* ==========================================================
+   NAVEGAÇÃO DO LIGHTBOX
+   ========================================================== */
+
+.lightbox-botao {
+
+    position: absolute;
+
+    top: -18px;
+
+    right: -18px;
+
+    width: 46px;
+
+    height: 46px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.92);
+
+    color: #222222;
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    transition:
+        background-color .20s,
+        transform .20s;
+
+    z-index: 20;
+
+}
+
+.lightbox-botao:hover {
+
+    background: #FFFFFF;
+
+    transform: scale(1.08);
+
+}
+
+/* ========================================================== */
+
+.lightbox-navegacao {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 54px;
+
+    height: 54px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.18);
+
+    color: #FFFFFF;
+
+    font-size: 34px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    backdrop-filter: blur(6px);
+
+    transition:
+        background-color .25s,
+        transform .20s;
+
+    user-select: none;
+
+}
+
+.lightbox-navegacao:hover {
+
+    background: rgba(255,255,255,.32);
+
+    transform: translateY(-50%) scale(1.08);
+
+}
+
+/* ========================================================== */
+
+.lightbox-anterior {
+
+    left: -80px;
+
+}
+
+.lightbox-proxima {
+
+    right: -80px;
+
+}
+
+/* ========================================================== */
+
+.lightbox-contador {
+
+    margin-top: 18px;
+
+    color: #FFFFFF;
+
+    font-size: 16px;
+
+    text-align: center;
+
+    font-weight: 500;
+
+    letter-spacing: .5px;
+
+}
+
+/* ==========================================================
+   RESPONSIVO
+   ========================================================== */
+
+@media (max-width:900px){
+
+    .lightbox-anterior{
+
+        left:12px;
+
+    }
+
+    .lightbox-proxima{
+
+        right:12px;
+
+    }
+
+}
+
+@media (max-width:700px){
+
+    .lightbox-botao{
+
+        top:12px;
+
+        right:12px;
+
+        width:40px;
+
+        height:40px;
+
+        font-size:24px;
+
+    }
+
+    .lightbox-navegacao{
+
+        width:46px;
+
+        height:46px;
+
+        font-size:28px;
+
+    }
+
+    .lightbox-anterior{
+
+        left:8px;
+
+    }
+
+    .lightbox-proxima{
+
+        right:8px;
+
+    }
+
+    .lightbox-contador{
+
+        font-size:14px;
+
+    }
+
+}
+
 .lightbox.aberto {
 
     display: flex;
