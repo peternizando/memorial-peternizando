@@ -1,0 +1,25 @@
+{
+    "codigo": "PTZ-COMERC1",
+
+    "versao": "1.1.1",
+
+    "dataCriacao": "2026-07-07",
+
+    "nome": "Bruce",
+
+    "mensagem": "Obrigado por todos os anos de amor, companheirismo e felicidade.",
+
+    "fotoPrincipal": "foto01.png",
+
+    "galeria": [
+        "foto01.png",
+        "foto02.png",
+        "foto03.png",
+        "foto04.png",
+        "foto05.png",
+        "foto06.png"
+
+    ],
+
+    "videos": []
+}
