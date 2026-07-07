@@ -257,9 +257,13 @@ body {
 
     display: flex;
 
+    flex-direction: column;
+
     align-items: center;
 
     justify-content: center;
+
+    gap: 18px;
 
     background: linear-gradient(135deg,#EFEFEF,#DDDDDD);
 
@@ -267,7 +271,9 @@ body {
 
     color: #777777;
 
-    font-size: 18px;
+    text-align: center;
+
+    padding: 35px;
 
 }
 
@@ -275,7 +281,7 @@ body {
 
     width: 90px;
 
-    opacity: .65;
+    opacity: .55;
 
 }
 
@@ -544,5 +550,45 @@ footer p {
         font-size: 34px;
 
     }
+
+/* ==========================================================
+   PLAYER DE VÍDEO
+   ========================================================== */
+
+.video-player {
+
+    width: 100%;
+
+    display: block;
+
+    border-radius: var(--raio-imagem);
+
+    background: #000000;
+
+    box-shadow: var(--sombra-card);
+
+}
+
+.video-player video {
+
+    width: 100%;
+
+    display: block;
+
+    border-radius: inherit;
+
+}
+
+.video-player iframe {
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    border: none;
+
+    border-radius: inherit;
+
+}
 
 }

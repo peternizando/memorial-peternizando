@@ -5,7 +5,7 @@ Arquivo.....: memorial.js
 
 Projeto.....: Memorial Peternizando
 
-Release.....: 1.1.1
+Release.....: 1.3.0
 
 Descrição...:
 Núcleo principal da aplicação.
@@ -54,6 +54,8 @@ async function iniciarAplicacao() {
         preencherCabecalho(dadosMemorial);
 
         carregarGaleria(dadosMemorial);
+
+        carregarMidia(dadosMemorial);
 
         console.log("Memorial carregado com sucesso.");
 

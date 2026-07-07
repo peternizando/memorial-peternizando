@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt-BR">
 
 <head>
@@ -8,7 +7,7 @@
 
     <link rel="icon"
           type="image/png"
-          href="assets/icones/favicon.png">
+          href="assets/favicon.png">
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
@@ -16,7 +15,7 @@
     <title>Memorial Peternizando</title>
 
     <link rel="stylesheet"
-          href="css/style.css?v=1.2.0">
+          href="css/style.css?v=1.2.1">
 
 </head>
 
@@ -58,14 +57,12 @@
                 <p class="descricao">
 
                     Reviva alguns momentos especiais compartilhados com
-
                     <strong id="nomeRecordacoes"></strong>.
 
                 </p>
 
-                <div
-                    id="galeria"
-                    class="galeria">
+                <div id="galeria"
+                     class="galeria">
 
                 </div>
 
@@ -85,7 +82,7 @@
 
                 <p class="descricao">
 
-                    Um momento inesquecível que permanecerá vivo para sempre.
+                    Reviva um momento inesquecível.
 
                 </p>
 
@@ -96,6 +93,12 @@
                         <img
                             src="assets/placeholders/placeholder-video.svg"
                             alt="Vídeo">
+
+                        <p>
+
+                            Nenhum vídeo disponível.
+
+                        </p>
 
                     </div>
 
@@ -109,9 +112,7 @@
 
             <section class="bloco">
 
-                <button
-                    id="btnCompartilhar"
-                    type="button">
+                <button id="btnCompartilhar">
 
                     ❤️ Compartilhar esta homenagem
 
@@ -128,9 +129,9 @@
                 <div class="footer-logo">
 
                     <img
-                        id="logoPeternizando"
                         src="assets/logos/logo-peternizando.png"
-                        alt="Logo da Peternizando">
+                        alt="Peternizando"
+                        loading="lazy">
 
                     <h3>
 
@@ -160,29 +161,31 @@
         id="lightbox"
         class="lightbox">
 
-        <span
-            id="fecharLightbox">
+        <div class="lightbox-conteudo">
 
-            ✕
+            <span
+                id="fecharLightbox">
 
-        </span>
+                ✕
 
-        <img
-            id="imagemLightbox"
-            src=""
-            alt="Foto ampliada">
+            </span>
+
+            <img
+                id="imagemLightbox"
+                src=""
+                alt="Foto ampliada">
+
+        </div>
 
     </div>
 
-    <!-- ======================================================
-         JAVASCRIPT
-         ====================================================== -->
+<script src="js/memorial.js?v=1.3.0"></script>
 
-    <script src="js/memorial.js?v=1.2.0"></script>
+<script src="js/galeria.js?v=1.3.0"></script>
 
-    <script src="js/galeria.js?v=1.2.0"></script>
+<script src="js/lightbox.js?v=1.3.0"></script>
 
-    <script src="js/lightbox.js?v=1.2.0"></script>
+<script src="js/midia.js?v=1.3.0"></script>
 
 </body>
 

@@ -21,5 +21,13 @@
 
     ],
 
-    "videos": []
+    "videos": [
+        {
+        "arquivo": "video01.mp4",
+        "poster": "foto04.png",
+        "titulo": "Sem estarei com vocês",
+        "tipo": "mp4"
+
+    }
+    ]
 }
