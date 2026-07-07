@@ -43,7 +43,7 @@ body {
 
     max-width: 760px;
 
-    margin: auto;
+    margin: 0 auto;
 
 }
 
@@ -80,6 +80,8 @@ body {
     margin: auto;
 
     border: 6px solid #f3f3f3;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
 
 }
 
@@ -163,7 +165,7 @@ body {
 
     cursor: pointer;
 
-    transition: .25s;
+    transition: transform .25s, box-shadow .25s;
 
     box-shadow: 0 6px 18px rgba(0,0,0,.08);
 
@@ -172,6 +174,8 @@ body {
 .foto-galeria:hover {
 
     transform: scale(1.03);
+
+    box-shadow: 0 12px 28px rgba(0,0,0,.18);
 
 }
 
@@ -221,7 +225,9 @@ body {
 
     cursor: pointer;
 
-    transition: .25s;
+    transition:
+    background-color .25s,
+    transform .15s;
 
 }
 
@@ -230,6 +236,51 @@ body {
     background: #333333;
 
 }
+
+#btnCompartilhar:active {
+
+    transform: scale(.98);
+
+}
+
+/* ==========================================================
+   LOGO DO RODAPÉ
+   ========================================================== */
+
+.footer-logo {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 10px;
+
+}
+
+.footer-logo img {
+
+    width: 42px;
+
+    height: 42px;
+
+    object-fit: contain;
+
+}
+
+.footer-logo h3 {
+
+    margin: 0;
+
+    font-size: 26px;
+
+    font-weight: 700;
+
+}
+
 
 /* ==========================================================
    RODAPÉ
