@@ -557,7 +557,7 @@ footer p {
 
 .video-player {
 
-    width: 100%;
+    max-width: 100%;
 
     display: block;
 
@@ -567,15 +567,17 @@ footer p {
 
     box-shadow: var(--sombra-card);
 
+    overflow: hidden;
+
 }
 
 .video-player video {
 
     width: 100%;
 
-    display: block;
+    height: auto;
 
-    border-radius: inherit;
+    display: block;
 
 }
 
@@ -587,7 +589,7 @@ footer p {
 
     border: none;
 
-    border-radius: inherit;
+    display: block;
 
 }
 
